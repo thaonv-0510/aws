@@ -9,8 +9,8 @@
 #### Policies:
 
 - Một JSON document, định nghĩa một set các permission.
-- Assign policy documment cho User/Group/Role để định nghĩa permission cho các thực thể đó
-
+- Assign policy documment cho User/Group/Role để định nghĩa permission cho các thực thể đó.
+-
 #### Roles:
 
 - Có thể tạo và assign role cho các resource trên AWS để định nghĩa permission cho các resource đó
