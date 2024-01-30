@@ -72,20 +72,6 @@ resource "aws_security_group_rule" "rule-egress-http" {
   type      = "egress"
 }
 
-
-# resource "aws_ebs_volume" "web-app-volumn" {
-#   availability_zone = aws_instance.web_app.availability_zone
-
-#   size = 12
-# }
-
-
-# resource "aws_volume_attachment" "vol-1" {
-#   device_name = "/dev/sdh"
-#   instance_id = aws_instance.web_app.id
-#   volume_id = aws_ebs_volume.web-app-volumn.id
-# }
-
 resource "aws_vpc" "vpc-1" {
   cidr_block = "10.0.0.0/16"
 }
