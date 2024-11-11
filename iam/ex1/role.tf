@@ -6,9 +6,27 @@ resource "aws_iam_role" "role-s3" {
       Action = "sts:AssumeRole"
       Effect = "Allow"
       Principal = {
-        Service = "s3.amazonaws.com"
+        Service = "ec2.amazonaws.com"
       }
     }]
+  })
+}
+
+resource "aws_iam_role_policy" "policy-s3" {
+  name = "policy-s3"
+  role = aws_iam_role.role-s3.id
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = [
+          "s3:Get*",
+          "s3:List*"
+        ]
+        Effect   = "Allow"
+        Resource = aws_s3_bucket.bucket-role.arn
+      }
+    ]
   })
 }
 
